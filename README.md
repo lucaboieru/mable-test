@@ -9,7 +9,7 @@ This website should have 6 pages as described below:
   - A login page for the website manager
   - A list view for the admin with all the orders from the users containing all the relevant data and with links to all products in the order
   - A list view for the admin with all the products with quick actions: edit, delete
-  - A page with an 'add new product' form.o
+  - A page with an 'add new product' form.
   - A page with and 'edit product' form (precompleted) which opens when the edit button in the admin list view is clicked
 
 ### API Endpoints
@@ -40,8 +40,7 @@ Below you'll have the API endpoints defined; replace <your-key> with the string 
           "password": "123456"
         }
     ```
-    
-    must be sent using `x-www-form-urlencoded`
+
 - Success response:
   * Code: 200
   * Content:
@@ -100,6 +99,7 @@ Below you'll have the API endpoints defined; replace <your-key> with the string 
             ...
         ]
     ```
+
 ##### Show one product
   Returns json data with one product.
 
@@ -125,7 +125,8 @@ Below you'll have the API endpoints defined; replace <your-key> with the string 
             "price": 10.99
         }
     ```
- ##### Create product
+
+##### Create product
   Returns json data with the new product.
 
 - URL: 
@@ -156,6 +157,7 @@ Below you'll have the API endpoints defined; replace <your-key> with the string 
             "price": 10.99
         }
     ```
+
 ##### Update product
   Returns json data with the updated product.
 
