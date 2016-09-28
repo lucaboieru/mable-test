@@ -44,7 +44,8 @@ Below you'll have the API endpoints defined; replace <your-key> with the string 
     must be sent using `x-www-form-urlencoded`
 - Success response:
   * Code: 200
-  * Content: 
+  * Content:
+ 
     ``` JSON
         {
           "first_name": "Product",
@@ -255,7 +256,8 @@ Creates a new order
     `None`
 - Success response:
   * Code: 200
-  * Content: 
+  * Content:
+ 
     ``` JSON
         [
             {
