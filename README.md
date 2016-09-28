@@ -86,7 +86,8 @@ Below you'll have the API endpoints defined; replace <your-key> with the string 
     `None`
 - Success response:
   * Code: 200
-  * Content: 
+  * Content:
+
     ``` JSON
         [
             {
@@ -113,7 +114,8 @@ Below you'll have the API endpoints defined; replace <your-key> with the string 
    `none`
 - Success response:
   * Code: 200
-  * Content: 
+  * Content:
+
     ``` JSON
         {
             "_id": "57e7c6a09b1c9a65133022ad",
@@ -143,7 +145,8 @@ Below you'll have the API endpoints defined; replace <your-key> with the string 
     must be sent using `multipart/form-data`
 - Success response:
   * Code: 200
-  * Content: 
+  * Content:
+
     ``` JSON
         {
             "_id": "57e7c6a09b1c9a65133022ad",
@@ -172,7 +175,8 @@ Below you'll have the API endpoints defined; replace <your-key> with the string 
     `image=[form-data]` (required)
 - Success response:
   * Code: 200
-  * Content: 
+  * Content:
+
     ``` JSON
         {
             "_id": "57e7c6a09b1c9a65133022ad",
@@ -225,7 +229,8 @@ Creates a new order
     
 - Success response:
   * Code: 200
-  * Content: 
+  * Content:
+
     ``` JSON
         {
             "_id": "57ebe3873c3639c481e92e4d",
