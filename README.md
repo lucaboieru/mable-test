@@ -34,7 +34,7 @@ Below you'll have the API endpoints defined; replace <your-key> with the string 
     `password=[string]`
     
     *default*:
-    ```
+    ``` JSON
         {
           "username": "manager",
           "password": "123456"
@@ -45,14 +45,14 @@ Below you'll have the API endpoints defined; replace <your-key> with the string 
 - Success response:
   * Code: 200
   * Content: 
-    ```
-    {
-      "first_name": "Product",
-      "last_name": "Manager",
-      "username": "manager",
-      "role": "manager",
-      "_ts": "2016-09-28T15:46:49.941Z"
-    }
+    ``` JSON
+        {
+          "first_name": "Product",
+          "last_name": "Manager",
+          "username": "manager",
+          "role": "manager",
+          "_ts": "2016-09-28T15:46:49.941Z"
+        }
     ```
 
 ##### Logout
@@ -68,10 +68,7 @@ Below you'll have the API endpoints defined; replace <your-key> with the string 
     `None`
 - Success response:
   * Code: 200
-  * Content: 
-    ```
-
-    ```
+  * Content: `None`
 
 #### Products
 
@@ -89,17 +86,17 @@ Below you'll have the API endpoints defined; replace <your-key> with the string 
 - Success response:
   * Code: 200
   * Content: 
-    ```
-    [
-        {
-            "_id": "57e7c6a09b1c9a65133022ad",
-            "title": "Beer Camp",
-            "description": "Lorem ipsum",
-            "image": "http://<your-key>.test.mable.ro/uploads/b5c9b3250f311d1a9d88158dd453fc74.jpg",
-            "price": 10.99
-        },
-        ...
-    ]
+    ``` JSON
+        [
+            {
+                "_id": "57e7c6a09b1c9a65133022ad",
+                "title": "Beer Camp",
+                "description": "Lorem ipsum",
+                "image": "http://<your-key>.test.mable.ro/uploads/b5c9b3250f311d1a9d88158dd453fc74.jpg",
+                "price": 10.99
+            },
+            ...
+        ]
     ```
 ##### Show one product
   Returns json data with one product.
@@ -116,14 +113,14 @@ Below you'll have the API endpoints defined; replace <your-key> with the string 
 - Success response:
   * Code: 200
   * Content: 
-    ```
-    {
-        "_id": "57e7c6a09b1c9a65133022ad",
-        "title": "Beer Camp",
-        "description": "Lorem ipsum",
-        "image": "http://<your-key>.test.mable.ro/uploads/b5c9b3250f311d1a9d88158dd453fc74.jpg",
-        "price": 10.99
-    }
+    ``` JSON
+        {
+            "_id": "57e7c6a09b1c9a65133022ad",
+            "title": "Beer Camp",
+            "description": "Lorem ipsum",
+            "image": "http://<your-key>.test.mable.ro/uploads/b5c9b3250f311d1a9d88158dd453fc74.jpg",
+            "price": 10.99
+        }
     ```
  ##### Create product
   Returns json data with the new product.
@@ -146,14 +143,14 @@ Below you'll have the API endpoints defined; replace <your-key> with the string 
 - Success response:
   * Code: 200
   * Content: 
-    ```
-    {
-        "_id": "57e7c6a09b1c9a65133022ad",
-        "title": "Beer Camp",
-        "description": "Lorem ipsum",
-        "image": "http://<your-key>.test.mable.ro/uploads/b5c9b3250f311d1a9d88158dd453fc74.jpg",
-        "price": 10.99
-    }
+    ``` JSON
+        {
+            "_id": "57e7c6a09b1c9a65133022ad",
+            "title": "Beer Camp",
+            "description": "Lorem ipsum",
+            "image": "http://<your-key>.test.mable.ro/uploads/b5c9b3250f311d1a9d88158dd453fc74.jpg",
+            "price": 10.99
+        }
     ```
 ##### Update product
   Returns json data with the updated product.
@@ -175,14 +172,14 @@ Below you'll have the API endpoints defined; replace <your-key> with the string 
 - Success response:
   * Code: 200
   * Content: 
-    ```
-    {
-        "_id": "57e7c6a09b1c9a65133022ad",
-        "title": "Beer Camp",
-        "description": "Lorem ipsum",
-        "image": "http://<your-key>.test.mable.ro/uploads/b5c9b3250f311d1a9d88158dd453fc74.jpg",
-        "price": 10.99
-    }
+    ``` JSON
+        {
+            "_id": "57e7c6a09b1c9a65133022ad",
+            "title": "Beer Camp",
+            "description": "Lorem ipsum",
+            "image": "http://<your-key>.test.mable.ro/uploads/b5c9b3250f311d1a9d88158dd453fc74.jpg",
+            "price": 10.99
+        }
     ```
 
 ##### Delete product
@@ -197,10 +194,7 @@ Below you'll have the API endpoints defined; replace <your-key> with the string 
  `None`
 - Success response:
   * Code: 200
-  * Content: 
-    ```
-    
-    ```
+  * Content: `None`
 
 #### Orders
 
@@ -217,21 +211,21 @@ Creates a new order
     
     `products=[array]` (required) - an array of product IDs
     
-        *default*:
-        ```
-            {
-              "description": "Some order",
-              "products": [
-                "57ebe1bd21ceb2c4711a3511",
-                "57ebe1bd21ceb2c4711a3512"
-              ]
-            }
-        ```
+    *default*:
+    ``` JSON
+        {
+          "description": "Some order",
+          "products": [
+            "57ebe1bd21ceb2c4711a3511",
+            "57ebe1bd21ceb2c4711a3512"
+          ]
+        }
+    ```
     
 - Success response:
   * Code: 200
   * Content: 
-    ```
+    ``` JSON
         {
             "_id": "57ebe3873c3639c481e92e4d",
             "description": "Some order",
@@ -262,21 +256,21 @@ Creates a new order
 - Success response:
   * Code: 200
   * Content: 
-    ```
-    [
-        {
-            "_id": "57ebe3873c3639c481e92e4d",
-            "description": "Some order",
-            "products": [
-                {
-                    "_id": "57ebe1bd21ceb2c4711a3511",
-                    "title": "Some product",
-                    "price": 10.9,
-                    "description": "Some product Description",
-                    "image": "http://<your-key>.test.mable.ro/uploads/b5c9b3250f311d1a9d88158dd453fc74.jpg"
-                }
-              ...
-            ]
-        }
-        ...
-    ]
+    ``` JSON
+        [
+            {
+                "_id": "57ebe3873c3639c481e92e4d",
+                "description": "Some order",
+                "products": [
+                    {
+                        "_id": "57ebe1bd21ceb2c4711a3511",
+                        "title": "Some product",
+                        "price": 10.9,
+                        "description": "Some product Description",
+                        "image": "http://<your-key>.test.mable.ro/uploads/b5c9b3250f311d1a9d88158dd453fc74.jpg"
+                    }
+                  ...
+                ]
+            }
+            ...
+        ]
