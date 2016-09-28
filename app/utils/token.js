@@ -1,11 +1,13 @@
-var crypto = require('crypto');
-var redisClient = require('redis').createClient();
+"use strict";
+
+const crypto = require('crypto');
+const redisClient = require('redis').createClient();
 
 redisClient.on('error', function (err) {
     console.error(err);
 });
 
-var TOKEN_LENGTH = 32;
+const TOKEN_LENGTH = 32;
 
 exports.create = function(callback) {
     crypto.randomBytes(TOKEN_LENGTH, function(ex, token) {
@@ -20,10 +22,10 @@ exports.setTokenWithData = function(token, data, ttl, callback) {
     if (token == null) throw new Error('Token is null');
     if (data != null && typeof data !== 'object') throw new Error('data is not an Object');
 
-    var userData = data || {};
+    let userData = data || {};
     userData._ts = new Date();
 
-    var timeToLive = ttl || auth.TIME_TO_LIVE;
+    let timeToLive = ttl || auth.TIME_TO_LIVE;
     if (timeToLive != null && typeof timeToLive !== 'number') throw new Error('TimeToLive is not a Number');
 
     redisClient.set(token, JSON.stringify(userData), function(err, reply) {

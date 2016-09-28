@@ -1,16 +1,18 @@
-var token = require('../utils/token');
-var cookie = require('cookie');
+"use strict";
+
+const token = require('../utils/token');
+const cookie = require('cookie');
 
 exports.login = (req, res) => {
 
-    var username = req.body.username;
-    var password = req.body.password;
+    let username = req.body.username;
+    let password = req.body.password;
 
     if (!username || !password)
         return res.status(400).send('Email or password missing');
 
     if (username === 'manager' && password === '123456') {
-        var loggedInUser = {
+        let loggedInUser = {
             first_name: 'Product',
             last_name: 'Manager',
             username: 'manager',
@@ -22,7 +24,7 @@ exports.login = (req, res) => {
             if (err)
                 return res.status(500).send(err);
 
-            var ttl = 60 * 60 * 24 * 7; // => 1 Week
+            let ttl = 60 * 60 * 24 * 7; // => 1 Week
             token.setTokenWithData(accessToken, loggedInUser, ttl, (err) => {
                 if (err)
                     return res.status(500).send(err);
@@ -42,8 +44,8 @@ exports.login = (req, res) => {
 };
 
 exports.logout = (req, res) => {
-    var cookies = cookie.parse(req.headers.cookie || '');
-    var accessToken = cookies.access_token;
+    let cookies = cookie.parse(req.headers.cookie || '');
+    let accessToken = cookies.access_token;
 
     if (!accessToken) {
         return res.status(403).send("No token");

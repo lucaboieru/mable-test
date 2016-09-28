@@ -1,7 +1,10 @@
-var config = module.exports;
+"use strict";
+
+let config = module.exports;
 
 config.controllers = {
     products: require(__dirname + '/controllers/products'),
+    orders: require(__dirname + '/controllers/orders'),
     users: require(__dirname + '/controllers/users')
 };
 
@@ -15,6 +18,19 @@ config.routes = [
             },
             'get': {
                 operation: config.controllers.products.index,
+                permission: []
+            }
+        }
+    },
+    {
+        url: '/orders',
+        methods: {
+            'post': {
+                operation: config.controllers.orders.create,
+                permission: ['manager']
+            },
+            'get': {
+                operation: config.controllers.orders.index,
                 permission: []
             }
         }

@@ -1,4 +1,23 @@
-function isProductValid(product) {
+"use strict";
+
+function isProductValid (product) {
+
+    if (typeof product === 'undefined') {
+        return false;
+    }
+
+    if (typeof product.title !== 'undefined' && typeof product.title !== 'string') {
+        return false;
+    }
+
+    if (typeof product.number !== 'undefined' && typeof product.price !== 'number') {
+        return false;
+    }
+
+    if (typeof product.description !== 'undefined' && typeof product.description !== 'string') {
+        return false;
+    }
+
     return true;
 }
 
@@ -13,11 +32,15 @@ exports.index = (req, res) => {
 };
 
 exports.create = (req, res) => {
-    if (!isProductValid(req.body)) {
-        return res.status(422).send('Provided data not valid');
+
+    let image = null;
+    if (req.files && req.files.image) {
+        image = 'http://' + req.headers.host + '/uploads/' + req.files.image.name;
     }
 
-    var newProduct = new req.db.product(req.body);
+    let fields = req.body;
+    fields.image = image;
+    let newProduct = new req.db.product(fields);
 
     newProduct.save((err, product) => {
         if (err) {
@@ -34,21 +57,34 @@ exports.show = (req, res) => {
             return res.status(500).send(err);
         }
 
+        if (!product) {
+            return res.status(404).send({'message': 'Not found.'});
+        }
+
         res.status(200).send(product);
     });
 };
 
 exports.update = (req, res) => {
 
-    if (!isProductValid(req.body)) {
-        return res.status(422).send();
+    let fields = req.body;
+    let image = null;
+    if (!isProductValid(fields)) {
+        return res.status(422).send({'message': 'Schema validation failed.'});
+    }
+    if (req.files && req.files.image) {
+        image = 'http://' + req.headers.host + '/uploads/' + req.files.image.name;
     }
 
-    var crudObj = {
+    if (image) {
+        fields.image = image
+    }
+
+    let crudObj = {
         q: {
             _id: req.params.pid
         },
-        u: req.body,
+        u: fields,
         o: {
             new: true
         }
@@ -59,14 +95,22 @@ exports.update = (req, res) => {
             return res.status(500).send(err);
         }
 
+        if (!product) {
+            return res.status(404).send({'message': 'Not found.'});
+        }
+
         res.status(200).send(product);
     });
 };
 
 exports.remove = (req, res) => {
-    req.db.product.findOneAndRemove({_id: req.params.pid}, (err) => {
+    req.db.product.findOneAndRemove({_id: req.params.pid}, (err, product) => {
         if (err) {
             return res.status(500).send(err);
+        }
+
+        if (!product) {
+            return res.status(404).send({'message': 'Not found.'});
         }
 
         res.status(200).send();

@@ -1,11 +1,13 @@
-var mongoose = require('mongoose');
-var ObjectId = mongoose.Schema.ObjectId;
+"use strict";
+
+const mongoose = require('mongoose');
+const ObjectId = mongoose.Schema.ObjectId;
 
 // Export the Mongoose model
 module.exports = function (mongoConnection) {
 
     // Define Product schema
-    var ProductSchema = new mongoose.Schema({
+    let ProductSchema = new mongoose.Schema({
         title: {
             type: String,
             required: true
@@ -24,7 +26,7 @@ module.exports = function (mongoConnection) {
         }
     });
 
-    var mongoModel;
+    let mongoModel;
 
     try {
         mongoModel = mongoConnection.model('Product', ProductSchema);
