@@ -2,8 +2,8 @@
 
 You are given a simple REST API. You have to create a website that consumes this API.
 
-This website should have 6 pages as described below:
-  - A list view with all the products with 'add to cart' functionality
+This website should have 8 pages as described below:
+  - A list view with all the products (sortable by price: ascending or descending) with 'add to cart' functionality
   - A detail view for each product which opens when you click on a product in the list view
   - A cart page which contains all products added to the cart from the list view or the detail view, with the functionality to place the order
   - A login page for the website manager
@@ -81,6 +81,9 @@ Below you'll have the API endpoints defined; replace <your-key> with the string 
   `GET`
 -  URL Params
     `None`
+-  Query Params
+
+    `sort` which can be `price_asc` or `price_desc` or not defined when products are needed in the order of creation
 - Data Params
     `None`
 - Success response:
