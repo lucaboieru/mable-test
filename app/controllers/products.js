@@ -22,7 +22,15 @@ function isProductValid (product) {
 }
 
 exports.index = (req, res) => {
-    req.db.product.find({}, (err, products) => {
+
+    var sort = {};
+    if (req.query.sort) {
+        sort = {
+            price: req.query.sort === 'price_asc' ? 1 : -1
+        };
+    }
+
+    req.db.product.find().sort(sort).exec((err, products) => {
         if (err) {
             return res.status(500).send(err);
         }

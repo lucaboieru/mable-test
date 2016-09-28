@@ -10,6 +10,19 @@ config.controllers = {
 
 config.routes = [
     {
+        url: '/orders',
+        methods: {
+            'post': {
+                operation: config.controllers.orders.create,
+                permission: []
+            },
+            'get': {
+                operation: config.controllers.orders.index,
+                permission: ['manager']
+            }
+        }
+    },
+    {
         url: '/products',
         methods: {
             'post': {
@@ -18,19 +31,6 @@ config.routes = [
             },
             'get': {
                 operation: config.controllers.products.index,
-                permission: []
-            }
-        }
-    },
-    {
-        url: '/orders',
-        methods: {
-            'post': {
-                operation: config.controllers.orders.create,
-                permission: ['manager']
-            },
-            'get': {
-                operation: config.controllers.orders.index,
                 permission: []
             }
         }
