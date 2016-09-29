@@ -6,9 +6,6 @@
 ![](http://i.imgur.com/lhH4nNN.png =253x)
 &nbsp;  
 &nbsp;  
-&nbsp;  
-&nbsp;  
-&nbsp;  
 You are given a simple REST API. You have to create a website that consumes this API.
 
 This website should have 9 pages as described below:
