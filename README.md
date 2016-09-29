@@ -54,10 +54,10 @@ Below you'll have the API endpoints defined; replace <your-key> with the string 
     
     *default*:
     ``` JSON
-        {
-          "username": "manager",
-          "password": "123456"
-        }
+    {
+      "username": "manager",
+      "password": "123456"
+    }
     ```
 
 - Success response:
@@ -65,13 +65,13 @@ Below you'll have the API endpoints defined; replace <your-key> with the string 
   * Content:
  
     ``` JSON
-        {
-          "first_name": "Product",
-          "last_name": "Manager",
-          "username": "manager",
-          "role": "manager",
-          "_ts": "2016-09-28T15:46:49.941Z"
-        }
+    {
+      "first_name": "Product",
+      "last_name": "Manager",
+      "username": "manager",
+      "role": "manager",
+      "_ts": "2016-09-28T15:46:49.941Z"
+    }
     ```
 
 ##### Logout
@@ -110,16 +110,16 @@ Below you'll have the API endpoints defined; replace <your-key> with the string 
   * Content:
 
     ``` JSON
-        [
-            {
-                "_id": "57e7c6a09b1c9a65133022ad",
-                "title": "Beer Camp",
-                "description": "Lorem ipsum",
-                "image": "http://<your-key>.test.mable.ro/uploads/b5c9b3250f311d1a9d88158dd453fc74.jpg",
-                "price": 10.99
-            },
-            ...
-        ]
+    [
+        {
+            "_id": "57e7c6a09b1c9a65133022ad",
+            "title": "Beer Camp",
+            "description": "Lorem ipsum",
+            "image": "http://<your-key>.test.mable.ro/uploads/b5c9b3250f311d1a9d88158dd453fc74.jpg",
+            "price": 10.99
+        },
+        ...
+    ]
     ```
 
 ##### Show one product
@@ -139,13 +139,13 @@ Below you'll have the API endpoints defined; replace <your-key> with the string 
   * Content:
 
     ``` JSON
-        {
-            "_id": "57e7c6a09b1c9a65133022ad",
-            "title": "Beer Camp",
-            "description": "Lorem ipsum",
-            "image": "http://<your-key>.test.mable.ro/uploads/b5c9b3250f311d1a9d88158dd453fc74.jpg",
-            "price": 10.99
-        }
+    {
+        "_id": "57e7c6a09b1c9a65133022ad",
+        "title": "Beer Camp",
+        "description": "Lorem ipsum",
+        "image": "http://<your-key>.test.mable.ro/uploads/b5c9b3250f311d1a9d88158dd453fc74.jpg",
+        "price": 10.99
+    }
     ```
 
 ##### Create product
@@ -171,13 +171,13 @@ Below you'll have the API endpoints defined; replace <your-key> with the string 
   * Content:
 
     ``` JSON
-        {
-            "_id": "57e7c6a09b1c9a65133022ad",
-            "title": "Beer Camp",
-            "description": "Lorem ipsum",
-            "image": "http://<your-key>.test.mable.ro/uploads/b5c9b3250f311d1a9d88158dd453fc74.jpg",
-            "price": 10.99
-        }
+    {
+        "_id": "57e7c6a09b1c9a65133022ad",
+        "title": "Beer Camp",
+        "description": "Lorem ipsum",
+        "image": "http://<your-key>.test.mable.ro/uploads/b5c9b3250f311d1a9d88158dd453fc74.jpg",
+        "price": 10.99
+    }
     ```
 
 ##### Update product
@@ -202,13 +202,13 @@ Below you'll have the API endpoints defined; replace <your-key> with the string 
   * Content:
 
     ``` JSON
-        {
-            "_id": "57e7c6a09b1c9a65133022ad",
-            "title": "Beer Camp",
-            "description": "Lorem ipsum",
-            "image": "http://<your-key>.test.mable.ro/uploads/b5c9b3250f311d1a9d88158dd453fc74.jpg",
-            "price": 10.99
-        }
+    {
+        "_id": "57e7c6a09b1c9a65133022ad",
+        "title": "Beer Camp",
+        "description": "Lorem ipsum",
+        "image": "http://<your-key>.test.mable.ro/uploads/b5c9b3250f311d1a9d88158dd453fc74.jpg",
+        "price": 10.99
+    }
     ```
 
 ##### Delete product
@@ -242,13 +242,13 @@ Creates a new order
     
     *default*:
     ``` JSON
-        {
-          "description": "Some order",
-          "products": [
-            "57ebe1bd21ceb2c4711a3511",
-            "57ebe1bd21ceb2c4711a3512"
-          ]
-        }
+    {
+      "description": "Some order",
+      "products": [
+        "57ebe1bd21ceb2c4711a3511",
+        "57ebe1bd21ceb2c4711a3512"
+      ]
+    }
     ```
     
 - Success response:
@@ -256,20 +256,20 @@ Creates a new order
   * Content:
 
     ``` JSON
-        {
-            "_id": "57ebe3873c3639c481e92e4d",
-            "description": "Some order",
-            "products": [
-                {
-                    "_id": "57ebe1bd21ceb2c4711a3511",
-                    "title": "Some product",
-                    "price": 10.9,
-                    "description": "Some product Description",
-                    "image": "http://<your-key>.test.mable.ro/uploads/b5c9b3250f311d1a9d88158dd453fc74.jpg"
-                }
-              ...
-            ]
-        }
+    {
+        "_id": "57ebe3873c3639c481e92e4d",
+        "description": "Some order",
+        "products": [
+            {
+                "_id": "57ebe1bd21ceb2c4711a3511",
+                "title": "Some product",
+                "price": 10.9,
+                "description": "Some product Description",
+                "image": "http://<your-key>.test.mable.ro/uploads/b5c9b3250f311d1a9d88158dd453fc74.jpg"
+            }
+          ...
+        ]
+    }
     ```
 
 ##### Show all orders
@@ -288,20 +288,21 @@ Creates a new order
   * Content:
  
     ``` JSON
-        [
-            {
-                "_id": "57ebe3873c3639c481e92e4d",
-                "description": "Some order",
-                "products": [
-                    {
-                        "_id": "57ebe1bd21ceb2c4711a3511",
-                        "title": "Some product",
-                        "price": 10.9,
-                        "description": "Some product Description",
-                        "image": "http://<your-key>.test.mable.ro/uploads/b5c9b3250f311d1a9d88158dd453fc74.jpg"
-                    }
-                  ...
-                ]
-            }
-            ...
-        ]
+    [
+        {
+            "_id": "57ebe3873c3639c481e92e4d",
+            "description": "Some order",
+            "products": [
+                {
+                    "_id": "57ebe1bd21ceb2c4711a3511",
+                    "title": "Some product",
+                    "price": 10.9,
+                    "description": "Some product Description",
+                    "image": "http://<your-key>.test.mable.ro/uploads/b5c9b3250f311d1a9d88158dd453fc74.jpg"
+                }
+              ...
+            ]
+        }
+        ...
+    ]
+    ```
