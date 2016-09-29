@@ -1,8 +1,9 @@
 ![](http://i.imgur.com/lhH4nNN.png =253x)
-  
-  
-  
-  
+&nbsp;  
+&nbsp;  
+&nbsp;  
+&nbsp;  
+&nbsp;  
 You are given a simple REST API. You have to create a website that consumes this API.
 
 This website should have 9 pages as described below:
@@ -23,10 +24,11 @@ You will also have to make the whole website responsive for phones and tablets s
 When you are done create a github repo and push the code there then send us the link to the repo.
 
 #### Good luck!
-  
-  
-  
-  
+&nbsp;  
+&nbsp;  
+&nbsp;  
+&nbsp;  
+&nbsp;  
 ### API Endpoints
 
 Below you'll have the API endpoints defined; replace <your-key> with the string you'll get in your email along with this file.
