@@ -1,9 +1,13 @@
-# Welcome
-
+![](http://i.imgur.com/lhH4nNN.png =253x)
+  
+  
+  
+  
 You are given a simple REST API. You have to create a website that consumes this API.
 
-This website should have 8 pages as described below:
-  - A list view with all the products (sortable by price: ascending or descending) with 'add to cart' functionality
+This website should have 9 pages as described below:
+  - A home page with a full screen carousel and a link to the product list view (Design provided by us)
+  - A list view with all the products (sortable by price: ascending or descending) with 'add to cart' functionality (Design provided by us)
   - A detail view for each product which opens when you click on a product in the list view
   - A cart page which contains all products added to the cart from the list view or the detail view, with the functionality to place the order
   - A login page for the website manager
@@ -12,6 +16,17 @@ This website should have 8 pages as described below:
   - A page with an 'add new product' form.
   - A page with and 'edit product' form (precompleted) which opens when the edit button in the admin list view is clicked
 
+For the pages where the design is provided by us you'll find `.psd`s in the `Design` folder. Make sure you follow the design as much as possible (colors, dimensions, fonts, font sizes etc). For the other pages you'll have to come up with the design based on what we provided, keeping the same style.
+
+You will also have to make the whole website responsive for phones and tablets starting from the width of 320px.
+
+When you are done create a github repo and push the code there then send us the link to the repo.
+
+#### Good luck!
+  
+  
+  
+  
 ### API Endpoints
 
 Below you'll have the API endpoints defined; replace <your-key> with the string you'll get in your email along with this file.
