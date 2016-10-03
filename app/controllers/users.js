@@ -30,10 +30,12 @@ exports.login = (req, res) => {
                     return res.status(500).send(err);
 
                 // set access token cookie
-                res.setHeader('Set-Cookie', cookie.serialize('access_token', accessToken, {
-                    httpOnly: true,
-                    maxAge: 60 * 60 * 24 * 7 // => 1 Week
-                }));
+                // res.setHeader('Set-Cookie', cookie.serialize('access_token', accessToken, {
+                //     httpOnly: true,
+                //     maxAge: 60 * 60 * 24 * 7 // => 1 Week
+                // }));
+
+                loggedInUser.access_token = accessToken;
 
                 res.status(200).send(loggedInUser);
             });
@@ -45,7 +47,7 @@ exports.login = (req, res) => {
 
 exports.logout = (req, res) => {
     let cookies = cookie.parse(req.headers.cookie || '');
-    let accessToken = cookies.access_token;
+    let accessToken = req.headers.Authorization;
 
     if (!accessToken) {
         return res.status(403).send("No token");
@@ -57,10 +59,10 @@ exports.logout = (req, res) => {
         }
 
         // expire cookie
-        res.setHeader('Set-Cookie', cookie.serialize('access_token', '', {
-            httpOnly: true,
-            maxAge: -1
-        }));
+        // res.setHeader('Set-Cookie', cookie.serialize('access_token', '', {
+        //     httpOnly: true,
+        //     maxAge: -1
+        // }));
 
         res.status(200).send();
     });

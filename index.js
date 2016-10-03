@@ -161,13 +161,13 @@ router.use(function(req, res, next) {
     }
 
     // Check header or url parameters or post parameters for token
-    let cookies = cookie.parse(req.headers.cookie || '');
-    let accessToken = cookies.access_token;
+    //let cookies = req.headers.Authorization; //cookie.parse(req.headers.cookie || '');
+    let accessToken = req.headers.Authorization;
 
     if (accessToken) {
         token.getDataByToken(accessToken, function(err, data) {
             if (err) {
-                return res.status(403).send({
+                return res.status(401).send({
                     success: false,
                     message: 'Failed to authenticate token.'
                 });
@@ -188,9 +188,9 @@ router.use(function(req, res, next) {
     } else {
         // If there is no token
         // return an error
-        return res.status(403).send({
+        return res.status(401).send({
             success: false,
-            message: 'No token provided.'
+            message: 'No Authorization header.'
         });
     }
 });
