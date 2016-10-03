@@ -60,7 +60,11 @@ app.use(express.static('public'));
 app.use(function(req, res, next) {
 
     // Get subdomain from request
-    let subdomain = req.subdomains[0];
+    let subdomain = req.subdomains[1];
+
+    if (!subdomain) {
+        return res.status(404).send("Not found");
+    }
 
     // Skip some subdomains
     // if (skipSubdomains.indexOf(subdomain) > -1 || !subdomain) {
