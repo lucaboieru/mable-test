@@ -162,7 +162,7 @@ router.use(function(req, res, next) {
 
     // Check header or url parameters or post parameters for token
     //let cookies = req.headers.Authorization; //cookie.parse(req.headers.cookie || '');
-    let accessToken = req.headers.Authorization;
+    let accessToken = req.headers.Authorization || req.headers.authorization;
 
     if (accessToken) {
         token.getDataByToken(accessToken, function(err, data) {

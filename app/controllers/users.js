@@ -47,7 +47,7 @@ exports.login = (req, res) => {
 
 exports.logout = (req, res) => {
     let cookies = cookie.parse(req.headers.cookie || '');
-    let accessToken = req.headers.Authorization;
+    let accessToken = req.headers.Authorization || req.headers.authorization;
 
     if (!accessToken) {
         return res.status(403).send("No token");
